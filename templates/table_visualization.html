@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Rank Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d2f3f5;
+        }
+        h1 {
+            color: #257ab3;
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        th, td {
+            border: 1px solid #353bdf;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #257798;
+            color: #cde2e8;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #d1e6ee;
+        }
+        tr:hover {
+            background-color: #95d0db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Rank Books</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Rank</th>
+                <th>Author</th>
+                <th>Last Week Rank</th>
+                <th>Weeks on Best Seller List</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            padding: 20px;
+            background-color: #cce8e1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+        }
+        h1 {
+            color: #146ca8;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #81bfd7;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4e8fa9;
+        }
+        .bg-img {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.6; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Best Sellers Books Ranks</h1>
+    </div>
+    <div class="container">
+        <h2>Select a Best Seller:</h2>
+        <form action="/result" method="post">
+            <select name="selected_value">
+                {% for value in values %}
+                <option value="{{ value[0] }}">{{ value[0] }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <img src="https://prh.imgix.net/articles/top10-fiction-1600x800.jpg" alt="Background Image" class="bg-img">
+</body>
+</html>
